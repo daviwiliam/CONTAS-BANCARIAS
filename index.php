@@ -8,19 +8,19 @@
     <title>Contas bancarias</title>
 </head>
 <body>
+    <div class="center">
+        <?php
 
-<?php
+            include_once('poupanca.php');
+            include_once('corrente.php');
 
-include_once('poupanca.php');
-include_once('corrente.php');
+            $c1 = new /*Escolha entre conta Poupança ou Corrente*/Corrente(100, 2586, 5000, 500);
+            $c1->depositar(/*Desposite um valor alterando um numero*/1800);
+            $c1->saque(/*Realize o saque alterando o numero*/2500);
 
-$c1 = new /*Escolha entre conta Poupança ou Corrente*/Corrente(100, 2586, 5000, 500);
-$c1->depositar(/*Desposite um valor alterando um numero*/1800);
-$c1->saque(/*Realize o saque alterando o numero*/2500);
+            echo $c1->getDetalhes();
 
-echo $c1->getDetalhes();
-
-?>
-
+        ?>
+    </div>
 </body>
 </html>
